@@ -32,7 +32,8 @@ function addMarkerWithTime(lat, lng, place) {
   addMarker(lat, lng, info);
 }
 
-fetch('https://sheets.googleapis.com/v4/spreadsheets/1UbiKTLssW4S67Kh03ZZVPxEl2DYWVgnP7C1uanjUg3k/values/Sheet1?key=AIzaSyDYpH5oeeaVfVTiUKADejqB3sPpA8LW_mY')
+function executeCode(){
+  fetch('https://sheets.googleapis.com/v4/spreadsheets/1UbiKTLssW4S67Kh03ZZVPxEl2DYWVgnP7C1uanjUg3k/values/Sheet1?key=AIzaSyDYpH5oeeaVfVTiUKADejqB3sPpA8LW_mY')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok ' + response.statusText);
@@ -46,6 +47,7 @@ fetch('https://sheets.googleapis.com/v4/spreadsheets/1UbiKTLssW4S67Kh03ZZVPxEl2D
   .catch(error => {
     console.error('Error fetching data:', error);
   });
+}
 
 // Function to update the current time in the header
 function updateTime() {
@@ -60,3 +62,4 @@ function updateTime() {
 
 // Call updateTime every second to keep the time updated
 setInterval(updateTime, 1000);
+setInterval(executeCode, 5000);
