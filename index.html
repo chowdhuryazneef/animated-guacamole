@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Map with Data from Google Sheets</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    #header {
+      background-color: #ffcccc; /* pastel red */
+      color: #006600; /* pastel green */
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      position: relative;
+    }
+
+    #current-time {
+      font-size: 18px;
+      color: #333;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    #map {
+      height: calc(100vh - 80px); /* Adjust height to accommodate header */
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div id="header">
+    Anti Discrimination
+    <div id="current-time"></div>
+  </div>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
