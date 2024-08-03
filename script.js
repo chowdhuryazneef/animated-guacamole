@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
 }).addTo(map);
 
-// Function to add markers with custom info
+
 function addMarker(lat, lng, info) {
   var marker = L.marker([lat, lng]).addTo(map);
   marker.bindPopup(info);
@@ -21,7 +21,6 @@ function addMarkersFromSheet(data) {
   });
 }
 
-// Add a marker with dynamic time
 function addMarkerWithTime(lat, lng, place) {
   var now = new Date();
   var hours = String(now.getHours()).padStart(2, '0');
@@ -41,7 +40,7 @@ fetch('https://sheets.googleapis.com/v4/spreadsheets/1UbiKTLssW4S67Kh03ZZVPxEl2D
     return response.json();
   })
   .then(data => {
-    console.log('Data fetched:', data); // Log the fetched data
+    console.log('Data fetched:', data); 
     addMarkersFromSheet(data);
   })
   .catch(error => {
